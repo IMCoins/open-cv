@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* from… */
+/* to… */
+/* at… */
+.topHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  margin-top: 20px;
+  max-width: 1280px;
+  width: 1280px;
+  border: 1px dotted blue;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.topHeader {
+  flex-wrap: wrap;
+  min-height: 200px;
+  max-height: 200px;
+  border: 1px solid black;
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .topHeader {
+    display: block;
+    min-height: 300px;
+    background-color: purple;
+  }
+}
+@media screen and (min-width: 768px) {
+  .topHeader {
+    justify-content: space-between;
+  }
+}
+.topHeader .logo {
+  min-width: 280px;
+  max-width: 280px;
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .topHeader .logo {
+    position: relative;
+    left: calc(55% - 175px);
+    max-height: 350px;
+  }
+}
+.topHeader .content {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (min-width: 768px) and (max-width: 2650px) {
+  .topHeader .content {
+    width: calc(100% - 280px);
+  }
+}
+.topHeader .content .ownerName {
+  width: 50%;
+  background-color: yellow;
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .topHeader .content .ownerName {
+    background-color: aqua;
+  }
+}
+.topHeader .content .switchLanguage {
+  display: flex;
+  align-items: right;
+  background-color: red;
+}
+@media screen and (max-width: 768px) {
+  .topHeader .content .switchLanguage {
+    background-color: blue;
+    max-width: 140px;
+  }
+}/*# sourceMappingURL=style.css.map */
