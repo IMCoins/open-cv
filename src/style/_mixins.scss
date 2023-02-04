@@ -1,0 +1,48 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+$breakpoints: (
+    "phone-down": 500px,
+    "tablet-up": 768px,
+    "desktop-down": 1280px,
+);
+
+/* from… */
+@mixin media-min($_key) {
+    @media screen
+        and (min-width: map-get($breakpoints, $_key)) {
+        &{ @content; }
+    }
+}
+
+/* to… */
+@mixin media-max($_key) {
+    @media screen
+        and (max-width: map-get($breakpoints, $_key)) {
+        &{ @content; }
+    }
+}
+
+@mixin media-between($_keymin, $_keymax) {
+    @media screen
+      and (min-width: map-get($breakpoints, $_keymin))
+      and (max-width: map-get($breakpoints, $_keymax)) {
+      &{ @content; }
+    }
+  }
+
+/* at… */
+@mixin media($_key) {
+    @media screen
+      and (min-width: map-get($breakpoints, $_key)) 
+      and (max-width: map-get(
+          $breakpoints,
+          nth(map-keys($breakpoints), index(map-keys($breakpoints), $_key) + 1)
+        )) {
+      &{ @content; }
+    }
+  }
